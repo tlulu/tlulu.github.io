@@ -1,0 +1,6 @@
+[submodule "quickstart/gruvhugo"]
+	path = quickstart/gruvhugo
+	url = https://gitlab.com/avron/gruvhugo.git
+[submodule "quickstart/themes/gruvhugo"]
+	path = quickstart/themes/gruvhugo
+	url = https://gitlab.com/avron/gruvhugo.git
