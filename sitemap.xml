@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://ludisen.com/posts/my-first-post/</loc>
+    <loc>https://ludisen.com/posts/my-first-post/</loc>
     <lastmod>2022-09-11T19:46:56-07:00</lastmod>
   </url><url>
-    <loc>http://ludisen.com/posts/</loc>
+    <loc>https://ludisen.com/posts/</loc>
     <lastmod>2022-09-11T19:46:56-07:00</lastmod>
   </url><url>
-    <loc>http://ludisen.com/</loc>
+    <loc>https://ludisen.com/</loc>
     <lastmod>2022-09-11T19:46:56-07:00</lastmod>
   </url><url>
-    <loc>http://ludisen.com/categories/</loc>
+    <loc>https://ludisen.com/categories/</loc>
   </url><url>
-    <loc>http://ludisen.com/series/</loc>
+    <loc>https://ludisen.com/series/</loc>
   </url><url>
-    <loc>http://ludisen.com/tags/</loc>
+    <loc>https://ludisen.com/tags/</loc>
   </url>
 </urlset>

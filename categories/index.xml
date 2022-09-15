@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Tony Lu</title>
-    <link>http://ludisen.com/categories/</link>
+    <link>https://ludisen.com/categories/</link>
     <description>Recent content in Categories on Tony Lu</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://ludisen.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://ludisen.com/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
