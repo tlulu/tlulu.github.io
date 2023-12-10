@@ -2,19 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ludisen.com/posts/my-first-post/</loc>
-    <lastmod>2022-09-11T19:46:56-07:00</lastmod>
+    <loc>http://example.org/</loc>
+    <lastmod>2023-12-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ludisen.com/posts/</loc>
-    <lastmod>2022-09-11T19:46:56-07:00</lastmod>
+    <loc>http://example.org/writing/post_001/</loc>
+    <lastmod>2023-12-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ludisen.com/</loc>
-    <lastmod>2022-09-11T19:46:56-07:00</lastmod>
+    <loc>http://example.org/writing/</loc>
+    <lastmod>2023-12-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ludisen.com/categories/</loc>
+    <loc>http://example.org/engineering/investing/</loc>
+    <lastmod>2023-11-28T00:44:25-08:00</lastmod>
   </url><url>
-    <loc>https://ludisen.com/series/</loc>
+    <loc>http://example.org/engineering/</loc>
+    <lastmod>2023-11-28T00:44:25-08:00</lastmod>
   </url><url>
-    <loc>https://ludisen.com/tags/</loc>
+    <loc>http://example.org/engineering/bitcoin/</loc>
+    <lastmod>2021-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://example.org/engineering/vpn/</loc>
+    <lastmod>2020-10-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://example.org/engineering/connextor/</loc>
+    <lastmod>2017-01-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://example.org/fun/</loc>
+  </url><url>
+    <loc>http://example.org/speaking/</loc>
+  </url><url>
+    <loc>http://example.org/categories/</loc>
+  </url><url>
+    <loc>http://example.org/tags/</loc>
   </url>
 </urlset>

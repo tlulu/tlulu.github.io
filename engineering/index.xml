@@ -1,23 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
-    <link>http://example.org/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <title>Engineerings on My New Hugo Site</title>
+    <link>http://example.org/engineering/</link>
+    <description>Recent content in Engineerings on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 09 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Starting my Blog</title>
-      <link>http://example.org/writing/post_001/</link>
-      <pubDate>Sat, 09 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>http://example.org/writing/post_001/</guid>
-      
-        <description></description>
-      
-    </item>
-    
+    <lastBuildDate>Tue, 28 Nov 2023 00:44:25 -0800</lastBuildDate><atom:link href="http://example.org/engineering/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cash App Investing</title>
       <link>http://example.org/engineering/investing/</link>
@@ -66,31 +55,6 @@ The Problem Bitcoin is a unique asset that the world has never seen before. Bitc
         <description>I co-founded ConNextor with Elva Young and David Song during ours studies at the University of Waterloo.
 The mission was to connect students from different disciplines to collaborate on projects together. Hackathons are a great platform to meet people and hack on things in a short time frame, but we found that most projects stopped progress after the hackathon. We wanted to foster collaboration for longer term projects.
 ConNextor was a social platform for students to gain and track experiences by collaborating on projects together.</description>
-      
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://example.org/fun/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://example.org/fun/</guid>
-      
-        <description>Video Making Videos are just another form of storytelling. Need to explore deeper here.
-Favorite Quotes &amp;ldquo;You have to dance beautifully in the box that you&amp;rsquo;re comfortable dancing in. My box was to be extremely ambitious within the sport of basketball. Your box is different than mine. Everybody has their own. It&amp;rsquo;s your job to try to perfect it and make it as beautiful of a canvas as you can make it.</description>
-      
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://example.org/speaking/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://example.org/speaking/</guid>
-      
-        <description>Public Speaking I was obsessed with sharpening my public speaking skills 2 years ago.
-This summer I represented San Francisco in the Bay Area wide toastmasters public speaking competition. I made it to the top 6 finalists out of 100 clubs in the Bay Area.
-I couldn&amp;rsquo;t have done this without my amazing toastmasters club, Everybody Speaks. Special thanks to the club presidents Levgeniia, James and Pam.</description>
       
     </item>
     
