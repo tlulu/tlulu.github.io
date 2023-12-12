@@ -6,15 +6,17 @@
     <description>Recent content on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 09 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Starting my Blog</title>
+      <title>Hello World</title>
       <link>http://example.org/writing/post_001/</link>
-      <pubDate>Sat, 09 Dec 2023 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/writing/post_001/</guid>
       
-        <description></description>
+        <description>For the longest time, I thought about creating my own space where I can write whatever I want. Throughout the years I&amp;rsquo;ve written on Medium and Substack.
+So why not use those instead?
+Substack provided a good environment to post whatever I wanted. However, the issue I found with Substack was that it was difficult for people to find it. On the other hand, while, Medium has a wonderful community of readers and writers, there were some posts where I wanted to share half baked ideas without having to worry about feedback from others.</description>
       
     </item>
     
