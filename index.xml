@@ -6,7 +6,20 @@
     <description>Recent content on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 12 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Apr 2024 22:58:47 -0700</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Bane of the Lightning Network</title>
+      <link>http://example.org/writing/post_002/</link>
+      <pubDate>Fri, 19 Apr 2024 22:58:47 -0700</pubDate>
+      
+      <guid>http://example.org/writing/post_002/</guid>
+      
+        <description>Happy Halvening day! The fees in the network as of writing this article is insane. So many inscriptions in this block. With the block space becoming more and more competitive these days, can Bitcoin truly scale?
+(Friday, April 19, 2024, at 5:39 pm PST via mempool.space)
+High Fee Environment Enter lightning, the savior of the network. While lightning is the leading scaling solution, it has proven to face challenges in these high fee environments.</description>
+      
+    </item>
+    
     <item>
       <title>Hello World</title>
       <link>http://example.org/writing/post_001/</link>
@@ -16,7 +29,7 @@
       
         <description>For the longest time, I thought about creating my own space where I can write whatever I want. Throughout the years I&amp;rsquo;ve written on Medium and Substack.
 So why not use those instead?
-Substack provided a good environment to post whatever I wanted. However, the issue I found with Substack was that it was difficult for people to find it. On the other hand, while, Medium has a wonderful community of readers and writers, there were some posts where I wanted to share half baked ideas without having to worry about feedback from others.</description>
+Substack provided a good environment to post whatever I wanted. However, the issue I found with Subastack was that it was difficult for people to find it. On the other hand, while, Medium has a wonderful community of readers and writers, there were some posts where I wanted to share half baked ideas without having to worry about feedback from others.</description>
       
     </item>
     
