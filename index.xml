@@ -8,15 +8,15 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 19 Apr 2024 22:58:47 -0700</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>The Bane of the Lightning Network</title>
-      <link>http://example.org/writing/the-bane-of-the-lightning-network/</link>
+      <title>Stuck Payments on the Lightning Network</title>
+      <link>http://example.org/writing/stuck-payments-on-the-lightning-network/</link>
       <pubDate>Fri, 19 Apr 2024 22:58:47 -0700</pubDate>
       
-      <guid>http://example.org/writing/the-bane-of-the-lightning-network/</guid>
+      <guid>http://example.org/writing/stuck-payments-on-the-lightning-network/</guid>
       
-        <description>Happy Halvening day! The fees in the network as of writing this article is insane. So many inscriptions in this block. With the block space becoming more and more competitive these days, can Bitcoin truly scale?
+        <description>Happy Halvening day! The fees in the network as of writing this article is insane. So many inscriptions in this block.
 (Friday, April 19, 2024, at 5:39 pm PST via mempool.space)
-High Fee Environment Enter lightning, the savior of the network. While lightning is the leading scaling solution, it has proven to face challenges in these high fee environments.</description>
+While the lightning network is being battle tested in the high fee environment, I want to point out another issue with lightning. A bigger and more fundamental issue that I don&amp;rsquo;t see many people talking about - stuck payments.</description>
       
     </item>
     
