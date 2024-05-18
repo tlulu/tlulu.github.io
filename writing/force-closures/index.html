@@ -2,15 +2,15 @@
 <html
   dir="ltr"
   lang="en"
-  data-theme="light"
+  data-theme="dark"
   
-    class="html theme--light"
+    class="html theme--dark"
   
-><head>
+><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <title>
     Tony Lu
         |
-        Writings
+        Force Channel Closures
       
 
     
@@ -22,7 +22,9 @@
   <meta name="author" content="Tony Lu" />
   <meta
     name="description"
-    content="Live, Laugh, Love
+    content="Live every moment,
+Laugh every day,
+Love beyond words
 "
   />
   
@@ -85,10 +87,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/cloud.pngfavicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/images/cloud.pngfavicon-16x16.png" />
 
-  <link rel="canonical" href="http://example.org/writing/" />
+  <link rel="canonical" href="http://localhost:1313/writing/force-closures/" />
 
   
-  <link rel="alternate" type="application/rss+xml" href="/writing/index.xml" title="My New Hugo Site" />
   
   
   
@@ -114,25 +115,94 @@
 
 
   
-  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Writings">
-<meta name="twitter:description" content="Live, Laugh, Love
-">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Force Channel Closures">
+<meta name="twitter:description" content="A channel force closure is one of the biggest complexities of Lightning in my opinion. There is revocation logic involved which is when a party decides to cheat another">
 
 
 
   
-  <meta property="og:url" content="http://example.org/writing/">
+  <meta property="og:url" content="http://localhost:1313/writing/force-closures/">
   <meta property="og:site_name" content="My New Hugo Site">
-  <meta property="og:title" content="Writings">
-  <meta property="og:description" content="Live, Laugh, Love
-">
+  <meta property="og:title" content="Force Channel Closures">
+  <meta property="og:description" content="A channel force closure is one of the biggest complexities of Lightning in my opinion. There is revocation logic involved which is when a party decides to cheat another">
   <meta property="og:locale" content="en-us">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="writing">
+    <meta property="article:published_time" content="2024-04-29T01:46:31-07:00">
+    <meta property="article:modified_time" content="2024-04-29T01:46:31-07:00">
 
 
 
   
   
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "writing",
+        "name": "Force Channel Closures",
+        "headline": "Force Channel Closures",
+        "alternativeHeadline": "",
+        "description": "
+      
+        A channel force closure is one of the biggest complexities of Lightning in my opinion. There is revocation logic involved which is when a party decides to cheat another
+
+
+      
+
+
+    ",
+        "inLanguage": "en-us",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/writing\/force-closures\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Tony Lu"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Tony Lu"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Tony Lu"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Tony Lu"
+        },
+        "copyrightYear" : "2024",
+        "dateCreated": "2024-04-29T01:46:31.00Z",
+        "datePublished": "2024-04-29T01:46:31.00Z",
+        "dateModified": "2024-04-29T01:46:31.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Tony Lu",
+            "url": "http://localhost:1313/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/localhost:1313\/images\/cloud.pngfavicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "http:\/\/localhost:1313\/writing\/force-closures\/",
+        "wordCount" : "29",
+        "genre" : [ ],
+        "keywords" : [ ]
+    }
+  </script>
+
 
 </head>
 <body class="body">
@@ -155,11 +225,11 @@
       />
       
         <div class="sidebar__introduction-title">
-          <a href="/">Tony Lu</a>
+          <a href="/">Di Lu</a>
         </div>
       
       <div class="sidebar__introduction-description">
-        <p>Live, Laugh, Love<br /></p>
+        <p>Live every moment,<br />Laugh every day,<br />Love beyond words<br /></p>
       </div>
     </div>
     <ul class="sidebar__list">
@@ -284,8 +354,6 @@
             
             <a
               
-                class="nav__link--active"
-              
               href="/writing/"
               
               title=""
@@ -327,59 +395,20 @@
 </div>
 </header>
   <div
-    class="archive 
+    class="post 
       animated fadeInDown
     "
   >
     
-      <div class="archive__heading">2024</div>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            <a class="archive__list-title" href="/writing/understanding-channel-force-closures/" title="Understanding Channel Force Closures">Understanding Channel Force Closures</a>
-            <div class="archive__list-date">
-              
-                
-                  May 17
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            <a class="archive__list-title" href="/writing/stuck-payments-on-the-lightning-network/" title="Stuck Payments on the Lightning Network">Stuck Payments on the Lightning Network</a>
-            <div class="archive__list-date">
-              
-                
-                  Apr 19
-                
-
-              
-            </div>
-          </li>
-        </ul>
+    <div class="post__content">
+      <h1>Force Channel Closures</h1>
+      <p>A channel force closure is one of the biggest complexities of Lightning in my opinion. There is revocation logic involved which is when a party decides to cheat another</p>
+</div>
+    <div class="post__footer">
       
 
-    
-      <div class="archive__heading">2023</div>
       
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            <a class="archive__list-title" href="/writing/hello-world/" title="Hello World">Hello World</a>
-            <div class="archive__list-date">
-              
-                
-                  Dec 12
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
+    </div>
 
     
   </div>

@@ -6,7 +6,18 @@
     <description>Recent content in Writings on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 Apr 2024 22:58:47 -0700</lastBuildDate><atom:link href="http://example.org/writing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 May 2024 01:46:31 -0700</lastBuildDate><atom:link href="http://example.org/writing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Understanding Channel Force Closures</title>
+      <link>http://example.org/writing/understanding-channel-force-closures/</link>
+      <pubDate>Fri, 17 May 2024 01:46:31 -0700</pubDate>
+      
+      <guid>http://example.org/writing/understanding-channel-force-closures/</guid>
+      
+        <description>A channel force closure is one of the most complex parts of Lightning in my opinion. This happens when one party isn&amp;rsquo;t cooperating with the other, resulting in the counterparty to initiate a force close. In addition, if one party decides to cheat another, then they need to be punished. The purpose of this post is to dive into the outputs and transactions of a force closure. This post will answer these questions:</description>
+      
+    </item>
+    
     <item>
       <title>Stuck Payments on the Lightning Network</title>
       <link>http://example.org/writing/stuck-payments-on-the-lightning-network/</link>

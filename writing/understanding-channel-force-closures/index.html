@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme="light"
+  
+    class="html theme--light"
+  
+><head>
+  <title>
+    Tony Lu
+        |
+        Understanding Channel Force Closures
+      
+
+    
+
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.125.1"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="Tony Lu" />
+  <meta
+    name="description"
+    content="Live, Laugh, Love
+"
+  />
+  
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/scss/main.min.b2eac18aafee52814df058c9d1b66322378aac184508526e256c89977c7f1751.css"
+      integrity="sha256-surBiq/uUoFN8FjJ0bZjIjeKrBhFCFJuJWyJl3x/F1E="
+      crossorigin="anonymous"
+      type="text/css"
+    />
+  
+
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.7d272de35b410fb165377550cdf9c4d3a80fbbcc961e111914e4d5c0eaf5729f.css"
+    integrity="sha256-fSct41tBD7FlN3VQzfnE06gPu8yWHhEZFOTVwOr1cp8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.55d8333481b07a08e07cf6f37319753a2b47e99f4c395394c5747b48b495aa9b.css"
+    integrity="sha256-VdgzNIGwegjgfPbzcxl1OitH6Z9MOVOUxXR7SLSVqps="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.a7448d02590b43449364b6b5922ed9af5410abb4de4238412a830316dedb850b.css"
+    integrity="sha256-p0SNAlkLQ0STZLa1ki7Zr1QQq7TeQjhBKoMDFt7bhQs="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.9ed75a5d670c953fe4df935937674b4646f92674367e9e66eb995bb04e821647.css"
+    integrity="sha256-ntdaXWcMlT/k35NZN2dLRkb5JnQ2fp5m65lbsE6CFkc="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/images/cloud.pngfavicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/cloud.pngapple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/cloud.pngfavicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/cloud.pngfavicon-16x16.png" />
+
+  <link rel="canonical" href="http://example.org/writing/understanding-channel-force-closures/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.d6d329d93844b162e8bed1e915619625ca91687952177552b9b3e211014a2957.js"
+      integrity="sha256-1tMp2ThEsWLovtHpFWGWJcqRaHlSF3VSubPiEQFKKVc="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+
+  
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Understanding Channel Force Closures">
+<meta name="twitter:description" content="A channel force closure is one of the most complex parts of Lightning in my opinion. This happens when one party isn&rsquo;t cooperating with the other, resulting in the counterparty to initiate a force close. In addition, if one party decides to cheat another, then they need to be punished. The purpose of this post is to dive into the outputs and transactions of a force closure. This post will answer these questions:">
+
+
+
+  
+  <meta property="og:url" content="http://example.org/writing/understanding-channel-force-closures/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="Understanding Channel Force Closures">
+  <meta property="og:description" content="A channel force closure is one of the most complex parts of Lightning in my opinion. This happens when one party isn&amp;rsquo;t cooperating with the other, resulting in the counterparty to initiate a force close. In addition, if one party decides to cheat another, then they need to be punished. The purpose of this post is to dive into the outputs and transactions of a force closure. This post will answer these questions:">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="writing">
+    <meta property="article:published_time" content="2024-05-17T01:46:31-07:00">
+    <meta property="article:modified_time" content="2024-05-17T01:46:31-07:00">
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "writing",
+        "name": "Understanding Channel Force Closures",
+        "headline": "Understanding Channel Force Closures",
+        "alternativeHeadline": "",
+        "description": "
+      
+        A channel force closure is one of the most complex parts of Lightning in my opinion. This happens when one party isn\u0026rsquo;t cooperating with the other, resulting in the counterparty to initiate a force close. In addition, if one party decides to cheat another, then they need to be punished. The purpose of this post is to dive into the outputs and transactions of a force closure. This post will answer these questions:
+
+
+      
+
+
+    ",
+        "inLanguage": "en-us",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/writing\/understanding-channel-force-closures\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Tony Lu"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Tony Lu"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Tony Lu"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Tony Lu"
+        },
+        "copyrightYear" : "2024",
+        "dateCreated": "2024-05-17T01:46:31.00Z",
+        "datePublished": "2024-05-17T01:46:31.00Z",
+        "dateModified": "2024-05-17T01:46:31.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Tony Lu",
+            "url": "http://example.org/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/images\/cloud.pngfavicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "http:\/\/example.org\/writing\/understanding-channel-force-closures\/",
+        "wordCount" : "1095",
+        "genre" : [ ],
+        "keywords" : [ ]
+    }
+  </script>
+
+
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/images/profile.jpeg"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/">Tony Lu</a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>Live, Laugh, Love<br /></p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://www.linkedin.com/in/tonylulu/"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Linkedin"
+            title="Linkedin"
+          >
+            <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/tlulu"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Github"
+            title="Github"
+          >
+            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="mailto:toastmastertony24@gmail.com"
+            target="_blank"
+            rel="noopener me"
+            aria-label="e-mail"
+            title="e-mail"
+          >
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Tony Lu
+        2024
+      
+    </li>
+    
+  </ul>
+</footer></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/"
+              
+              title=""
+              >About</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/engineering/"
+              
+              title=""
+              >Engineering</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/speaking/"
+              
+              title=""
+              >Speaking</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/writing/"
+              
+              title=""
+              >Writing</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/fun/"
+              
+              title=""
+              >Fun</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      <h1>Understanding Channel Force Closures</h1>
+      <p>A channel force closure is one of the most complex parts of Lightning in my opinion. This happens when one party isn&rsquo;t cooperating with the other, resulting in the counterparty to initiate a force close. In addition, if one party decides to cheat another, then they need to be punished. The purpose of this post is to dive into the outputs and transactions of a force closure. This post will answer these questions:</p>
+<ul>
+<li>What are the outputs in a commitment transaction?</li>
+<li>What transactions will be broadcasted onchain?</li>
+</ul>
+<h2 id="cooperative-channel-close">Cooperative Channel Close</h2>
+<p>To start, let&rsquo;s talk about cooperative channel closures, when life is roses and butterflies.</p>
+<p>In a cooperative closure, both parties agree on the final balance and broadcast a closing transaction that contains the wallet outputs for each party</p>
+<p><img src="/images/LN/coop_close.png" alt="image">
+(<a href="https://github.com/lnbook/lnbook/blob/develop/07_payment_channels.asciidoc" target="_blank" >https://github.com/lnbook/lnbook/blob/develop/07_payment_channels.asciidoc</a>)</p>
+<h2 id="force-channel-close">Force Channel Close</h2>
+<p>For force closure, one party publishes the latest commitment transaction.
+<img src="/images/LN/force_close.png" alt="image">
+(<a href="https://github.com/lnbook/lnbook/blob/develop/07_payment_channels.asciidoc" target="_blank" >https://github.com/lnbook/lnbook/blob/develop/07_payment_channels.asciidoc</a>)</p>
+<p>A commitment transaction is the latest state of the channel. If Alice has a channel with Bob, both Alice and Bob have their own version of a commitment transaction with the latest balances.
+<img src="/images/LN/commitment_tx.png" alt="image">
+(<a href="https://github.com/lnbook/lnbook/blob/develop/07_payment_channels.asciidoc" target="_blank" >https://github.com/lnbook/lnbook/blob/develop/07_payment_channels.asciidoc</a>)</p>
+<p>Each commitment transaction has an output with a locking script that looks like:</p>
+<pre tabindex="0"><code>OP_IF
+    # Penalty transaction
+    &lt;revocationpubkey&gt;
+OP_ELSE
+    &lt;to_self_delay&gt;
+    OP_CHECKSEQUENCEVERIFY
+    OP_DROP
+    &lt;local_delayedpubkey&gt;
+OP_ENDIF
+OP_CHECKSIG
+</code></pre><p>The <code>to_self_delay</code> timelock allows the counterparty to publish a revocation secret in the event that one party tries to cheat from publishing an old commitment transaction</p>
+<p>Let&rsquo;s look at the revocation path.</p>
+<h2 id="revocation-secret">Revocation Secret</h2>
+<p>When a new commitment transaction is created, it reflects the latest agreed-upon channel state. Each party generates a revocation key and revocation secret for the previous commitment transaction. If a party tries to broadcast an old commitment transaction to the blockchain (attempting to cheat), the counterparty can react by using the revocation secret associated with that old state to claim all the funds in the channel, effectively penalizing the cheating party.</p>
+<p><img src="/images/LN/revocation_tx.png" alt="image">
+(<a href="https://github.com/lnbook/lnbook/blob/develop/07_payment_channels.asciidoc" target="_blank" >https://github.com/lnbook/lnbook/blob/develop/07_payment_channels.asciidoc</a>)</p>
+<h2 id="the-outputs-of-a-commitment-tx">The Outputs of a Commitment Tx</h2>
+<p>The commitment tx has 4 different output types for various situations, 3 of which have HTLC locking scripts.</p>
+<p><strong>Suppose Bob is broadcasting his commitment transaction.</strong></p>
+<p><img src="/images/LN/commitment_tx_outputs.png" alt="image">
+(<a href="https://github.com/lightning/bolts/issues/553#issuecomment-455641943" target="_blank" >https://github.com/lightning/bolts/issues/553#issuecomment-455641943</a>)</p>
+<h2 id="1-output-to-alice">1. Output to Alice</h2>
+<p>This output is straightforward - there is no locking script. Alice can spend it without constraint.</p>
+<h2 id="2-output-to-bob">2. Output to Bob</h2>
+<p>This output goes to Bob with the same locking script mentioned above</p>
+<pre tabindex="0"><code>OP_IF
+    # Penalty transaction
+    &lt;revocationpubkey&gt;
+OP_ELSE
+    &lt;to_self_delay&gt;
+    OP_CHECKSEQUENCEVERIFY
+    OP_DROP
+    &lt;local_delayedpubkey&gt;
+OP_ENDIF
+OP_CHECKSIG
+</code></pre><p>Bob needs to wait <code>to_self_delay</code> to give time for Alice to dispute any bad behavior.</p>
+<h2 id="3-htlc-offered-by-bob">3. HTLC Offered by Bob</h2>
+<p>This represents an in-flight HTLC that Bob makes to Alice. For a better understanding of HTLCs I highly recommend reading these posts by <a href="https://ellemouton.com/posts/htlc-deep-dive/" target="_blank" >Elle Mouton</a>. By far the best explanations of LN on the internet.</p>
+<p>To summarize from Elle:</p>
+<p>This contract is essentially a locking script that has 3 conditions to spend it:</p>
+<ol>
+<li>To HTLC timeout tx address. If the HTLC times out after the <code>cltv expiry</code>, then the funds will be sent to a HTLC timeout tx</li>
+<li>To Alice&rsquo;s address. Alice can spend if she provides a preimage</li>
+<li>To Alice&rsquo;s address. Alice can spend if she provides a revocation secret</li>
+</ol>
+<p>The conditions to spend the HTLC timeout output are:</p>
+<ol>
+<li>To Bob&rsquo;s address. Bob can spend after <code>to_self_delay</code></li>
+<li>To Alice&rsquo;s address. Alice can spend if Alice provides a revocation secret</li>
+</ol>
+<p><strong>Why is there a separate HTLC-timeout transaction you might ask?</strong></p>
+<p>There are two timeouts that need to accounted for.</p>
+<ol>
+<li><code>to_self_delay</code> is related to the commitment transaction and allows time for the counterparty to punish bad behavior</li>
+<li><code>cltv_expiry</code> is related to the HTLC and allows the sender to get their money back in the event that the recipient is unresponsive.</li>
+</ol>
+<p>Putting both conditions in the same locking script causes problems. If the first spending condition in the locking script were instead:</p>
+<ul>
+<li>To Bob&rsquo;s output, after <code>to_self_delay</code> + <code>cltv_expiry</code></li>
+</ul>
+<p>This extends the HTLC timeout by <code>to_self_delay</code>! This gives extra time for Alice to spend the funds even if the HTLC is expired. A separate transaction is needed to separate this logic.</p>
+<h2 id="4-htlc-received-by-bob">4. HTLC Received by Bob</h2>
+<p>This represents an in-flight HTLC that Bob receives from Alice.</p>
+<p>Again, to summarize from Elle:</p>
+<p>This contract is essentially a locking script that has 3 conditions to spend it:</p>
+<ol>
+<li>To HTLC success tx address. If Bob provides the preimage, then the funds will be sent to a HTLC success tx</li>
+<li>To Alice&rsquo;s address. Alice can spend after <code>cltv_expiry</code></li>
+<li>To Alice&rsquo;s address. Alice can spend if she provides a revocation secret</li>
+</ol>
+<p>The conditions to spend the HTLC success output are:</p>
+<ol>
+<li>To Bob&rsquo;s address. Bob can spend after <code>to_self_delay</code></li>
+<li>To Alice&rsquo;s address. Alice can spend if Alice provides a revocation secret</li>
+</ol>
+<p><strong>Why is there a separate HTLC-success transaction you might ask?</strong></p>
+<p>Again, putting both conditions in the same locking script causes problems. If the first spending condition in the locking script were instead:</p>
+<ul>
+<li>To Bob&rsquo;s output, after <code>to_self_delay</code> + preimage</li>
+</ul>
+<p>Then there&rsquo;s a chance that <code>to_self_delay</code> is longer than the <code>cltv_expiry</code>, then Alice could claim her funds back even though Bob has the preimage! A separate transaction is needed to separate this logic.</p>
+<h2 id="why-are-there-two-revocation-paths">Why are there two revocation paths?</h2>
+<p>Because either the commitment tx or the HTLC timeout/success tx can be revoked, depending on which one is published onchain.</p>
+<h2 id="an-example-to-sum-up">An Example to Sum up</h2>
+<p>Consider a newly established channel between Alice and Bob. Say, Alice funded the channel with 1 BTC, and 0.1 BTC goes to Bob initially. Each of them has their own version of the initial commitment transaction, each with two outputs: 0.9 to Alice, 0.1 to Bob.</p>
+<p>Imagine Alice wants to send 0.2 BTC to Bob.</p>
+<p>A new pair of commitment transactions is created, each of them with three outputs: 0.7 to Alice, 0.1 to Bob, and 0.2 as an in-flight HTLC.</p>
+<p>Once the HTLC fails/succeeds, as long as both sides commit to the new state, the new commitment transaction will have 2 outputs: 0.7 to Alice, 0.3 to Bob.</p>
+<p>Finally, there could be up to 3 layers of onchain transactions from a channel force close. E.g.</p>
+<ol>
+<li>Commitment tx that spends the funding tx</li>
+<li>HTLC timeout / success tx that spends the commitment tx</li>
+<li>Revocation tx that spends the HTLC tx</li>
+</ol>
+<h2 id="put-your-learnings-to-the-test">Put Your Learnings to the Test</h2>
+<p>The replacement cycling attack is an attack vector in LN. Super difficult to pull off, but possible today. This uses all the concepts and terminology from this post.
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">How does a lightning replacement cycling attack work?<br><br>There&#39;s a lot of discussion about this newly discovered vulnerability on the mailing lists, but the actual mechanism is a bit hard to follow.<br><br>So here&#39;s an illustrated primer...<br><br>🧵 1/n <a href="https://t.co/mvvS8bEc5f">pic.twitter.com/mvvS8bEc5f</a></p>&mdash; mononaut (tx/acc) (@mononautical) <a href="https://twitter.com/mononautical/status/1715736832950825224?ref_src=twsrc%5Etfw">October 21, 2023</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+</p>
+</div>
+    <div class="post__footer">
+      
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Tony Lu
+        2024
+      
+    </li>
+    
+  </ul>
+</footer></body>
+</html>
