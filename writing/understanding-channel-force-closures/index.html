@@ -114,7 +114,8 @@
 
   
   <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Understanding Channel Force Closures">
-<meta name="twitter:description" content="A channel force closure is one of the most complex parts of Lightning in my opinion. This happens when one party isn&rsquo;t cooperating with the other, resulting in the counterparty to initiate a force close. In addition, if one party decides to cheat another, then they need to be punished. The purpose of this post is to dive into the outputs and transactions of a force closure. This post will answer these questions:">
+<meta name="twitter:description" content="It took me forever to fully understand the intricacies of channel force closures. Sources online were either too high level or too specific about implementation details - this post aims to be an in-between. The content of this post dives into the transactions of a force closure. This post will answer specific questions like:
+What are the outputs in a commitment transaction? What transactions will be broadcasted onchain? Cooperative Channel Close To start, let&rsquo;s talk about cooperative channel closures, when life is roses and butterflies.">
 
 
 
@@ -122,7 +123,8 @@
   <meta property="og:url" content="http://example.org/writing/understanding-channel-force-closures/">
   <meta property="og:site_name" content="My New Hugo Site">
   <meta property="og:title" content="Understanding Channel Force Closures">
-  <meta property="og:description" content="A channel force closure is one of the most complex parts of Lightning in my opinion. This happens when one party isn&amp;rsquo;t cooperating with the other, resulting in the counterparty to initiate a force close. In addition, if one party decides to cheat another, then they need to be punished. The purpose of this post is to dive into the outputs and transactions of a force closure. This post will answer these questions:">
+  <meta property="og:description" content="It took me forever to fully understand the intricacies of channel force closures. Sources online were either too high level or too specific about implementation details - this post aims to be an in-between. The content of this post dives into the transactions of a force closure. This post will answer specific questions like:
+What are the outputs in a commitment transaction? What transactions will be broadcasted onchain? Cooperative Channel Close To start, let&amp;rsquo;s talk about cooperative channel closures, when life is roses and butterflies.">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
   <meta property="article:section" content="writing">
@@ -145,7 +147,7 @@
         "alternativeHeadline": "",
         "description": "
       
-        A channel force closure is one of the most complex parts of Lightning in my opinion. This happens when one party isn\u0026rsquo;t cooperating with the other, resulting in the counterparty to initiate a force close. In addition, if one party decides to cheat another, then they need to be punished. The purpose of this post is to dive into the outputs and transactions of a force closure. This post will answer these questions:
+        It took me forever to fully understand the intricacies of channel force closures. Sources online were either too high level or too specific about implementation details - this post aims to be an in-between. The content of this post dives into the transactions of a force closure. This post will answer specific questions like:\nWhat are the outputs in a commitment transaction? What transactions will be broadcasted onchain? Cooperative Channel Close To start, let\u0026rsquo;s talk about cooperative channel closures, when life is roses and butterflies.
 
 
       
@@ -195,7 +197,7 @@
 
     ,
         "url" : "http:\/\/example.org\/writing\/understanding-channel-force-closures\/",
-        "wordCount" : "1095",
+        "wordCount" : "1111",
         "genre" : [ ],
         "keywords" : [ ]
     }
@@ -400,7 +402,7 @@
     
     <div class="post__content">
       <h1>Understanding Channel Force Closures</h1>
-      <p>A channel force closure is one of the most complex parts of Lightning in my opinion. This happens when one party isn&rsquo;t cooperating with the other, resulting in the counterparty to initiate a force close. In addition, if one party decides to cheat another, then they need to be punished. The purpose of this post is to dive into the outputs and transactions of a force closure. This post will answer these questions:</p>
+      <p>It took me forever to fully understand the intricacies of channel force closures. Sources online were either too high level or too specific about implementation details - this post aims to be an in-between. The content of this post dives into the transactions of a force closure. This post will answer specific questions like:</p>
 <ul>
 <li>What are the outputs in a commitment transaction?</li>
 <li>What transactions will be broadcasted onchain?</li>
@@ -411,7 +413,7 @@
 <p><img src="/images/LN/coop_close.png" alt="image">
 (<a href="https://github.com/lnbook/lnbook/blob/develop/07_payment_channels.asciidoc" target="_blank" >https://github.com/lnbook/lnbook/blob/develop/07_payment_channels.asciidoc</a>)</p>
 <h2 id="force-channel-close">Force Channel Close</h2>
-<p>For force closure, one party publishes the latest commitment transaction.
+<p>Force closures happen when one party isn&rsquo;t cooperating with the other, resulting in the counterparty to initiate a force close. In addition, if one party decides to cheat another, then they need to be punished. For force closure, one party publishes the latest commitment transaction.
 <img src="/images/LN/force_close.png" alt="image">
 (<a href="https://github.com/lnbook/lnbook/blob/develop/07_payment_channels.asciidoc" target="_blank" >https://github.com/lnbook/lnbook/blob/develop/07_payment_channels.asciidoc</a>)</p>
 <p>A commitment transaction is the latest state of the channel. If Alice has a channel with Bob, both Alice and Bob have their own version of a commitment transaction with the latest balances.

@@ -14,7 +14,8 @@
       
       <guid>http://example.org/writing/understanding-channel-force-closures/</guid>
       
-        <description>A channel force closure is one of the most complex parts of Lightning in my opinion. This happens when one party isn&amp;rsquo;t cooperating with the other, resulting in the counterparty to initiate a force close. In addition, if one party decides to cheat another, then they need to be punished. The purpose of this post is to dive into the outputs and transactions of a force closure. This post will answer these questions:</description>
+        <description>It took me forever to fully understand the intricacies of channel force closures. Sources online were either too high level or too specific about implementation details - this post aims to be an in-between. The content of this post dives into the transactions of a force closure. This post will answer specific questions like:
+What are the outputs in a commitment transaction? What transactions will be broadcasted onchain? Cooperative Channel Close To start, let&amp;rsquo;s talk about cooperative channel closures, when life is roses and butterflies.</description>
       
     </item>
     
