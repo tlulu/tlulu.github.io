@@ -6,13 +6,24 @@
     <description>Recent content on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 17 May 2024 01:46:31 -0700</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Weekend of LLMs</title>
+      <link>http://example.org/writing/post_004/</link>
+      <pubDate>Thu, 09 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/writing/post_004/</guid>
+      
+        <description>I&amp;rsquo;ve been late to exploring the generative AI space, but over Thanksgiving break, I decided to use an LLM to help me understand a challenging book I&amp;rsquo;m currently reading: The Human Condition by Hannah Arendt. This book is, without a doubt, one of the hardest books I.have.ever.read.. Its abstract ideas and Arendt&amp;rsquo;s extremely dense prose often leave me spending 10 minutes analyzing a single page. After weeks of making minimal progress, I wondered: could an LLM teach me?</description>
+      
+    </item>
+    
     <item>
       <title>Understanding Channel Force Closures</title>
-      <link>http://example.org/writing/understanding-channel-force-closures/</link>
+      <link>http://example.org/writing/post_003/</link>
       <pubDate>Fri, 17 May 2024 01:46:31 -0700</pubDate>
       
-      <guid>http://example.org/writing/understanding-channel-force-closures/</guid>
+      <guid>http://example.org/writing/post_003/</guid>
       
         <description>It took me forever to fully understand the intricacies of channel force closures. Sources online were either too high level or too specific about implementation details - this post aims to be an in-between. The content of this post dives into the transactions of a force closure. This post will answer specific questions like:
 What are the outputs in a commitment transaction? What transactions will be broadcasted onchain? Cooperative Channel Close To start, let&amp;rsquo;s talk about cooperative channel closures, when life is roses and butterflies.</description>
@@ -21,10 +32,10 @@ What are the outputs in a commitment transaction? What transactions will be broa
     
     <item>
       <title>Stuck Payments on the Lightning Network</title>
-      <link>http://example.org/writing/stuck-payments-on-the-lightning-network/</link>
+      <link>http://example.org/writing/post_002/</link>
       <pubDate>Fri, 19 Apr 2024 22:58:47 -0700</pubDate>
       
-      <guid>http://example.org/writing/stuck-payments-on-the-lightning-network/</guid>
+      <guid>http://example.org/writing/post_002/</guid>
       
         <description>Happy Halvening day! The fees in the network as of writing this article is insane. So many inscriptions in this block.
 (Friday, April 19, 2024, at 5:39 pm PST via mempool.space)
@@ -34,10 +45,10 @@ While the lightning network is being battle tested in the high fee environment, 
     
     <item>
       <title>Hello World</title>
-      <link>http://example.org/writing/hello-world/</link>
+      <link>http://example.org/writing/post_001/</link>
       <pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/writing/hello-world/</guid>
+      <guid>http://example.org/writing/post_001/</guid>
       
         <description>For the longest time, I thought about creating my own space where I can write whatever I want. Throughout the years I&amp;rsquo;ve written on Medium and Substack.
 So why not use those instead?
@@ -103,19 +114,7 @@ ConNextor was a social platform for students to gain and track experiences by co
       
       <guid>http://example.org/fun/</guid>
       
-        <description>Stand-Up I feel alive when I&amp;rsquo;m on stage. Video Making Videos are just another form of storytelling. Need to explore deeper here.
-Favorite Quotes &amp;ldquo;You have to dance beautifully in the box that you&amp;rsquo;re comfortable dancing in. My box was to be extremely ambitious within the sport of basketball. Your box is different than mine. Everybody has their own. It&amp;rsquo;s your job to try to perfect it and make it as beautiful of a canvas as you can make it.</description>
-      
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://example.org/speaking/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://example.org/speaking/</guid>
-      
-        <description>Public Speaking I was obsessed with sharpening my public speaking skills in 2021.
+        <description>Stand-Up I feel alive when I&amp;rsquo;m on stage. Public Speaking I was obsessed with sharpening my public speaking skills in 2021.
 In May 2023, I represented San Francisco in the Bay Area wide toastmasters public speaking competition. I made it to the top 6 finalists out of 100 clubs in the Bay Area.
 I couldn&amp;rsquo;t have done this without my amazing toastmasters club, Everybody Speaks. Special thanks to the club presidents Levgeniia, James and Pam.</description>
       
