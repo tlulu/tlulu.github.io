@@ -6,7 +6,19 @@
     <description>Recent content in Writings on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 09 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/writing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/writing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Challenges in Defining SLAs for Bitcoin Withdrawals</title>
+      <link>http://example.org/writing/post_005/</link>
+      <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/writing/post_005/</guid>
+      
+        <description>The Bitcoin mempool has hit record highs over the past two years. The mempool fee rate has been rising since February 2023 and the predictable old days of 1 sats/vbyte are over. Thank you Ordinals.
+Some bitcoin wallets offer service-level agreements (SLA) that guarantee that transactions will be confirmed in a certain number of blocks or within a certain time. However, how realistic is this actually? Let&amp;rsquo;s take a look at 1-block confirmation times as an example which n-block confirmations can be extrapolated from it.</description>
+      
+    </item>
+    
     <item>
       <title>A Weekend of LLMs</title>
       <link>http://example.org/writing/post_004/</link>

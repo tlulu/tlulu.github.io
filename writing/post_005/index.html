@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme="light"
+  
+    class="html theme--light"
+  
+><head>
+  <title>
+    Tony Lu
+        |
+        Challenges in Defining SLAs for Bitcoin Withdrawals
+      
+
+    
+
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.125.1"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="Tony Lu" />
+  <meta
+    name="description"
+    content=""
+  />
+  
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/scss/main.min.e787fb3b7b7c96b4bceae384bb5183b406b4ce803d9bb4ca10e30032193756f1.css"
+      integrity="sha256-54f7O3t8lrS86uOEu1GDtAa0zoA9m7TKEOMAMhk3VvE="
+      crossorigin="anonymous"
+      type="text/css"
+    />
+  
+
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.7d272de35b410fb165377550cdf9c4d3a80fbbcc961e111914e4d5c0eaf5729f.css"
+    integrity="sha256-fSct41tBD7FlN3VQzfnE06gPu8yWHhEZFOTVwOr1cp8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.55d8333481b07a08e07cf6f37319753a2b47e99f4c395394c5747b48b495aa9b.css"
+    integrity="sha256-VdgzNIGwegjgfPbzcxl1OitH6Z9MOVOUxXR7SLSVqps="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.a7448d02590b43449364b6b5922ed9af5410abb4de4238412a830316dedb850b.css"
+    integrity="sha256-p0SNAlkLQ0STZLa1ki7Zr1QQq7TeQjhBKoMDFt7bhQs="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.9ed75a5d670c953fe4df935937674b4646f92674367e9e66eb995bb04e821647.css"
+    integrity="sha256-ntdaXWcMlT/k35NZN2dLRkb5JnQ2fp5m65lbsE6CFkc="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/images/cloud.pngfavicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/cloud.pngapple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/cloud.pngfavicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/cloud.pngfavicon-16x16.png" />
+
+  <link rel="canonical" href="http://example.org/writing/post_005/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.d6d329d93844b162e8bed1e915619625ca91687952177552b9b3e211014a2957.js"
+      integrity="sha256-1tMp2ThEsWLovtHpFWGWJcqRaHlSF3VSubPiEQFKKVc="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+
+  
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Challenges in Defining SLAs for Bitcoin Withdrawals">
+<meta name="twitter:description" content="The Bitcoin mempool has hit record highs over the past two years. The mempool fee rate has been rising since February 2023 and the predictable old days of 1 sats/vbyte are over. Thank you Ordinals.
+Some bitcoin wallets offer service-level agreements (SLA) that guarantee that transactions will be confirmed in a certain number of blocks or within a certain time. However, how realistic is this actually? Let&rsquo;s take a look at 1-block confirmation times as an example which n-block confirmations can be extrapolated from it.">
+
+
+
+  
+  <meta property="og:url" content="http://example.org/writing/post_005/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="Challenges in Defining SLAs for Bitcoin Withdrawals">
+  <meta property="og:description" content="The Bitcoin mempool has hit record highs over the past two years. The mempool fee rate has been rising since February 2023 and the predictable old days of 1 sats/vbyte are over. Thank you Ordinals.
+Some bitcoin wallets offer service-level agreements (SLA) that guarantee that transactions will be confirmed in a certain number of blocks or within a certain time. However, how realistic is this actually? Let&amp;rsquo;s take a look at 1-block confirmation times as an example which n-block confirmations can be extrapolated from it.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="writing">
+    <meta property="article:published_time" content="2025-01-11T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-11T00:00:00+00:00">
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "writing",
+        "name": "Challenges in Defining SLAs for Bitcoin Withdrawals",
+        "headline": "Challenges in Defining SLAs for Bitcoin Withdrawals",
+        "alternativeHeadline": "",
+        "description": "
+      
+        The Bitcoin mempool has hit record highs over the past two years. The mempool fee rate has been rising since February 2023 and the predictable old days of 1 sats\/vbyte are over. Thank you Ordinals.\nSome bitcoin wallets offer service-level agreements (SLA) that guarantee that transactions will be confirmed in a certain number of blocks or within a certain time. However, how realistic is this actually? Let\u0026rsquo;s take a look at 1-block confirmation times as an example which n-block confirmations can be extrapolated from it.
+
+
+      
+
+
+    ",
+        "inLanguage": "en-us",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/writing\/post_005\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Tony Lu"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Tony Lu"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Tony Lu"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Tony Lu"
+        },
+        "copyrightYear" : "2025",
+        "dateCreated": "2025-01-11T00:00:00.00Z",
+        "datePublished": "2025-01-11T00:00:00.00Z",
+        "dateModified": "2025-01-11T00:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Tony Lu",
+            "url": "http://example.org/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/images\/cloud.pngfavicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "http:\/\/example.org\/writing\/post_005\/",
+        "wordCount" : "802",
+        "genre" : [ ],
+        "keywords" : [ ]
+    }
+  </script>
+
+
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/images/profile.jpeg"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/">Tony Lu</a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p></p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://www.linkedin.com/in/tonylulu/"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Linkedin"
+            title="Linkedin"
+          >
+            <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/tlulu"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Github"
+            title="Github"
+          >
+            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="mailto:toastmastertony24@gmail.com"
+            target="_blank"
+            rel="noopener me"
+            aria-label="e-mail"
+            title="e-mail"
+          >
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Tony Lu
+        2025
+      
+    </li>
+    
+  </ul>
+</footer></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/"
+              
+              title=""
+              >About</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/engineering/"
+              
+              title=""
+              >Engineering</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/writing/"
+              
+              title=""
+              >Writing</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/fun/"
+              
+              title=""
+              >Fun</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      <h1>Challenges in Defining SLAs for Bitcoin Withdrawals</h1>
+      <p>The Bitcoin mempool has hit record highs over the past two years. The mempool fee rate has been rising since February 2023 and the predictable old days of 1 sats/vbyte are over. Thank you Ordinals.</p>
+<p>Some bitcoin wallets offer service-level agreements (SLA) that guarantee that transactions will be confirmed in a certain number of blocks or within a certain time. However, how realistic is this actually? Let&rsquo;s take a look at 1-block confirmation times as an example which n-block confirmations can be extrapolated from it.</p>
+<h1 id="why-1-block-sla-is-hard"><strong>Why 1-block SLA is hard</strong></h1>
+<p>There are 4 random variables that are inherent in the Bitcoin network that make estimating SLAs difficult</p>
+<ol>
+<li>Transaction propagation time</li>
+<li>Block mining time deltas</li>
+<li>Probability of a empty block</li>
+<li>Distribution of fees in the mempool</li>
+</ol>
+<h2 id="1-transaction-propagation-time"><strong>1. Transaction Propagation Time</strong></h2>
+<p>A transaction does not reach a majority of miners instantaneously, it must propagate. It takes time to reach all the miners in the network.</p>
+<p><img src="/images/content/post_005/propagation_delay.png" alt="image">
+The Transaction propagation delay PDF from <a href="https://www.dsn.kastel.kit.edu/bitcoin/#propagation" target="_blank" >https://www.dsn.kastel.kit.edu/bitcoin/#propagation</a>. Note that the expected value is around 30 seconds.</p>
+<p>The <a href="http://mempool.space" target="_blank" >mempool.space</a> codebase uses 180s (3 minutes) as the default propagation delay (<a href="https://github.com/mononaut/mempool/blob/bee573fdb857445ee3fdc208ddb5ac1448890e24/backend/src/api/audit.ts#L4" target="_blank" >here</a>) before considering a transaction to have a high enough probability of being included in a block.</p>
+<h2 id="2-mining-time-delta"><strong>2. Mining Time Delta</strong></h2>
+<p>The average time for a block to be mined is ~10 minutes. However, this time could vary based on different environment conditions. Sometimes a block can be mined in an hour, or a group of blocks can be mined in succession in the span of 5 minutes.</p>
+<p><img src="/images/content/post_005/mining.png" alt="image">
+Taken from Feb 7, 5:15pm PST from <a href="https://mempool.observer/#past-blocks" target="_blank" >https://mempool.observer/#past-blocks</a></p>
+<h2 id="3-probability-of-an-empty-block"><strong>3. Probability of an Empty Block</strong></h2>
+<p>There are cases when a block is empty and there are no transactions in it except for the coinbase transaction. In this scenario, guaranteeing a next block withdrawal is impossible. Here is one example <a href="https://mempool.space/block/00000000000000000001e3b80ea60912e9dc16ba90271f66eb857a8bf5b08b72" target="_blank" >https://mempool.space/block/00000000000000000001e3b80ea60912e9dc16ba90271f66eb857a8bf5b08b72</a></p>
+<p>This occurs because mining pools send an empty block template, to maximize time miners can start searching for the next block.</p>
+<p>According to <a href="https://braiins.com/blog/why-pools-mine-empty-blocks-and-how-stratum-v2-fixes-this" target="_blank" >Braiins</a>:</p>
+<p><code>Empty block mining has become less and less common over the years, but unfortunately there are still 3-4 empty blocks mined per week on average.</code></p>
+<h2 id="4-distribution-of-fees-in-the-mempool"><strong>4. Distribution of Fees in the Mempool</strong></h2>
+<p>Bitcoin miners are incentivized to select transactions with the highest fees in the mempool to include in the next block. However, Block space is limited and we could be outbid by others in the market. There are <a href="https://bitcoiner.live/" target="_blank" >fee estimates</a> to give a higher degree of confidence, but things could change drastically if more withdrawals are being made. This is highly dependent on network conditions.</p>
+<h1 id="whats-a-good-sla-definition"><strong>What&rsquo;s a good SLA definition?</strong></h1>
+<p>We have a couple options to define SLAs.</p>
+<ol>
+<li>Define SLA in terms of block time: a 1 block SLA</li>
+<li>Define SLA in terms of clock time: a 10 minute SLA</li>
+</ol>
+<h3 id="scenario-1-block-time-sla"><strong>Scenario 1: Block time SLA</strong></h3>
+<p>Suppose we broadcast at block at 20:08, then the next four blocks are mined at 20:11, 20:13, 20:16, and 20:26. Which one do we consider our “target”? Suppose we get into the 4th block, which was 18 minutes since broadcast time, but only 15 minutes after the time the transaction was fully propagated.</p>
+<p><img src="/images/content/post_005/quick_mining.png" alt="image"></p>
+<p>❓<strong>Question:</strong> Did we meet our objective? Was this “fast enough”. Considering what was going on here, even the third block may have been constructed by a miner that may not have received or considered our target transaction, or possibly an <strong>Empty Block.</strong></p>
+<p>❌ if we defined our SLA in terms of 1 blocks, this case would fail</p>
+<h3 id="scenario-2-clock-time-sla"><strong>Scenario 2: Clock time SLA</strong></h3>
+<p>In the following scenario, we broadcast a transaction at 15:42, but the next block is not mined until ~16:20, a time delta of 38 minutes!</p>
+<p><img src="/images/content/post_005/long_block_time.png" alt="image"></p>
+<p>❓<strong>Question:</strong> Is this acceptable performance? We got into the next block. But it took nearly 40 minutes from the point of view of the customer! We obviously could not have sped up the mining of that next block in this case.</p>
+<p>❌ if we defined our SLA in terms 10 minutes, this case would fail</p>
+<h2 id="conclusion---it-is-impossible-to-guarantee-an-sla"><strong>Conclusion - It is IMPOSSIBLE to Guarantee an SLA</strong></h2>
+<p>Is it impossible to guarantee an SLA due to limited block space. Other motivated parties can have more aggressive strategies to outbid your transaction. The best effort solution is to fee bump aggressively in order to get into the next block. However, even fee bumping may not guarantee a spot due to reasons outlined above. That&rsquo;s just the nature of Bitcoin. There will always be a percentage of transactions that will breach SLA.</p>
+<h1 id="takeaways"><strong>Takeaways</strong></h1>
+<ul>
+<li>Propagation time in distributed systems and a limited block space make defining SLAs a tricky problem.</li>
+<li>Defining an SLA is a good benchmark for your system, but it is impossible to guarantee! There will always be a percentage of transactions that will breach SLA and that is something inherent about Bitcoin.</li>
+<li>Aggressive fee bumping is a best effort solution but still doesn&rsquo;t guarantee a 1-block SLA.</li>
+</ul>
+</div>
+    <div class="post__footer">
+      
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Tony Lu
+        2025
+      
+    </li>
+    
+  </ul>
+</footer></body>
+</html>
