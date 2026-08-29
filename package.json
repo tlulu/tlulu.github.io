@@ -1,0 +1,52 @@
+{
+  "name": "tlulu.github.io",
+  "version": "1.0.0",
+  "description": "Personal website",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tlulu/tlulu.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/tlulu/tlulu.github.io/issues"
+  },
+  "homepage": "https://github.com/tlulu/tlulu.github.io#readme",
+  "dependencies": {
+    "@next/third-parties": "^16.3.1",
+    "@types/node": "^26.2.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "autoprefixer": "^10.5.4",
+    "get-youtube-id": "^1.0.1",
+    "gray-matter": "^4.0.3",
+    "highlight.js": "^11.12.0",
+    "katex": "^0.18.4",
+    "lucide-react": "^1.30.0",
+    "next": "^16.3.0",
+    "postcss": "^8.5.26",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-markdown": "^10.1.0",
+    "rehype-highlight": "^7.0.2",
+    "rehype-katex": "^7.0.1",
+    "rehype-raw": "^7.0.0",
+    "remark-breaks": "^4.0.0",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^7.0.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.20"
+  }
+}
