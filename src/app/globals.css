@@ -20,10 +20,11 @@
   }
 
   body {
+    -webkit-text-size-adjust: 100%;
     font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
     background-color: var(--background);
     color: var(--foreground);
-    zoom: 1.25;
+    zoom: 1.10;
   }
 
   lite-youtube {
