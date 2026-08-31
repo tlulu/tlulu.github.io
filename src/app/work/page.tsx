@@ -34,7 +34,7 @@ export default function EngineeringPage() {
             Back to home
           </Link>
         </div>
-        <section className="text-[15px] leading-relaxed text-[var(--foreground)] opacity-90">
+        <section className="text-[0.9375rem] leading-relaxed text-[var(--foreground)] opacity-90">
           <p>I'm beyond proud of leaving my imprints on the world through these works.</p>
         </section>
 
@@ -54,7 +54,7 @@ export default function EngineeringPage() {
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <h3 className="text-[14px] sm:text-[15px] font-medium text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors leading-snug px-1 line-clamp-2">
+                <h3 className="text-[0.875rem] sm:text-[0.9375rem] font-medium text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors leading-snug px-1 line-clamp-2">
                   {project.title}
                 </h3>
               </Link>

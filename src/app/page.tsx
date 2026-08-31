@@ -54,7 +54,7 @@ export default function HomePage() {
         </div>
 
         {/* Bio Section */}
-        <section className="text-[15px] leading-relaxed text-[var(--foreground)] opacity-90 space-y-2">
+        <section className="text-[0.9375rem] leading-relaxed text-[var(--foreground)] opacity-90 space-y-2">
           <p>Hi there!</p>
           <p>
             This is a space where I talk about my{" "}
@@ -87,7 +87,7 @@ export default function HomePage() {
           <div className="space-y-6">
             {posts.map((post) => (
               <article key={post.slug} className="flex flex-col gap-1">
-                <h3 className="text-[15px] font-medium text-[var(--foreground)]">
+                <h3 className="text-[0.9375rem] font-medium text-[var(--foreground)]">
                   <Link href={`/writing/${post.slug}`} className="hover:underline">
                     {post.title}
                   </Link>
